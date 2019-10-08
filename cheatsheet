@@ -1,0 +1,34 @@
+sudo docker container ls --> ver containers abiertos y su id para cerrar.
+sudo docker stop grimoirelab/full --> para el contenedor
+sudo docker start grimoirelab/full
+sudo docker ps --> estado
+sudo docker kill "ID", docker stop "ID", docker rm "ID" --> ver documentacion (cerrar container, liberar puerto).
+sudo docker inspect grimoirelab/full | grep 'elastic' --> version elasticsearch (6.1.0),...
+sudo  docker run -p 127.0.0.1:5601:5601 -p 127.0.0.1:9200:9200 -p 127.0.0.1:3306:3306 -v $(pwd)/credentials.cfg:/override.cfg -t grimoirelab/full
+
+Grafana
+admin -- 12341829as
+sudo service grafana-server start
+sudo service grafana-server restart
+
+ElasticSearch------
+GET 'localhost:9200/_cat/indices?v&pretty' (url)
+GET _cat/indices (cliente)
+GET git_grimoirelab-raw/items/_search (visualizar todas las entradas)
+GET git-raw/_mapping/items
+
+GET git_grimoirelab-raw/items/_search (FILTRADO SIMPLE)
+{
+	"query": {
+		"match": {
+      "data.Author": "Jesus M. Gonzalez-Barahona <jgb@gsyc.es>"
+    }
+	}
+}
+
+PROBLEMAS--
+Liberar espacio dockers:
+    sudo docker system df --> ver espacio usado por dockers
+    sudo docker system prune --> eliminar containers no usados
+    sudo docker system prune -a --> todo
+    df -h --> ver disco usado

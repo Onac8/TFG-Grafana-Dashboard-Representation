@@ -9,6 +9,9 @@
   * Creado "credentials.cfg" en /home/jonycp --> pwd
 
   * Docker instalado:
+    * https://docs.docker.com/install/linux/docker-ce/ubuntu/
+    * Elegir distro de linux y bajar: https://download.docker.com/linux/
+    * sudo dpkg -i /path/to/package.deb
     * grimoire lab /full  
     (includes GrimoireLab and runs SirMordred, as grimoirelab/installed does, but also includes all services needed to produce a dashboard)
     (includes Elastic Search, MariaDB and Kibiter) https://hub.docker.com/r/grimoirelab/full
@@ -16,11 +19,6 @@
     * sudo  docker run -p 127.0.0.1:5601:5601 -v $(pwd)/credentials.cfg:/override.cfg -t grimoirelab/full
     * sudo  docker run -p 127.0.0.1:5601:5601 -p 127.0.0.1:9200:9200 -p 127.0.0.1:3306:3306 -v $(pwd)/credentials.cfg:/override.cfg -t grimoirelab/full
     * docker run info --> https://docs.docker.com/engine/reference/run/
-
-    * Docker is a platform for developers and sysadmins to develop, deploy, and run applications with containers. The use of Linux containers to deploy   applications is called containerization. Containers are not new, but their use for easily deploying applications is.
-
-    * SIRMORDRED: It runs Perceval, GrimoireELK, SortingHat, etc. to retrieve data from the data sources, produce raw and enriched indexes in ElasticSearch,   load predefined visualizations and panels to the dashboard, and all the stuff.
-
 
 ---
 
@@ -118,6 +116,10 @@
     * Un poco tosco con las unidades. Es necesario cambiar hasta dos veces (en las zonas de metric y display) el tipo de unidad, depende de la visualización.
     * Un poco tosco con el dato a representar. Ejemplo: queremos avg o difference, tenemos que elegirlo en hasta dos sitios diferentes (como arriba).
     ?
+
+
+---
+
 
 ## Sprint 19-6
   * Construir un docker que permita desplegar todo de una vez (que incluya grafana basicamente)

@@ -2,6 +2,7 @@ sudo docker container ls --> ver containers abiertos y su id para cerrar.
 sudo docker stop grimoirelab/full --> para el contenedor
 sudo docker start grimoirelab/full
 sudo docker ps --> estado
+sudo docker kill + TAB (para ver nombre de docker)
 sudo docker kill "ID", docker stop "ID", docker rm "ID" --> ver documentacion (cerrar container, liberar puerto).
 sudo docker inspect grimoirelab/full | grep 'elastic' --> version elasticsearch (6.1.0),...
 sudo  docker run -p 127.0.0.1:5601:5601 -p 127.0.0.1:9200:9200 -p 127.0.0.1:3306:3306 -v $(pwd)/credentials.cfg:/override.cfg -t grimoirelab/full

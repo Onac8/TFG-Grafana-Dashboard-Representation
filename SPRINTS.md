@@ -135,11 +135,18 @@
     * Manual de utilización de docker build (https://docs.docker.com/engine/reference/commandline/build/).
     * Manual de utilización dockerfile (https://odewahn.github.io/docker-jumpstart/building-images-with-dockerfiles.html).
     * Manual 2 (https://www.howtoforge.com/tutorial/how-to-create-docker-images-with-dockerfile/).
-    * Comando de creacion de imagen: `sudo docker build -f Dockerfile-grafana -t grimoirelab/grafana:latest .`. Usar en path adecuado (dentro de grimoirelab/docker).
-    * Comando ejecución contenedor: `sudo  docker run -p 127.0.0.1:5601:5601 -p 127.0.0.1:9200:9200 -p 127.0.0.1:3306:3306 -v $(pwd)/credentials.cfg:/override.cfg -t grimoirelab/grafana` --> igual pero con grimoirelab/grafana.
+    * Comando de creacion de imagen: ` sudo docker build -f $(pwd)/docker/Dockerfile-grafana -t grimoirelab/grafana:latest .`. -- Usar en path adecuado (dentro de /grimoirelab/).
+    * Comando ejecución contenedor: `sudo  docker run -p 127.0.0.1:5601:5601 -p 127.0.0.1:9200:9200 -p 127.0.0.1:3306:3306 -p 127.0.0.1:3000:3000 -v $(pwd)/credentials.cfg:/override.cfg -t grimoirelab/grafana` -- en home
+    * User de grafana en contenedor: admin admin.
   * Explorados filtros de grafana.
   * Github issues explorado.
 
+  docker exec -i -t grimoirelab/grafana env TERM=xterm /bin/bash --> contenedor ya lanzado
+  en contenedor cargar dashboards de grafana exportar importar
+
+### PROBLEMAS
+  * el puerto 3000 de grafana no se cierra tras cada run del container. hace falta matar el proceso de grafana para liberar el puerto, si no el segundo container no se conecta :3000.
+  * 
 
 
 ---

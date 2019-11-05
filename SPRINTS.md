@@ -135,21 +135,50 @@
     * Manual de utilización de docker build (https://docs.docker.com/engine/reference/commandline/build/).
     * Manual de utilización dockerfile (https://odewahn.github.io/docker-jumpstart/building-images-with-dockerfiles.html).
     * Manual 2 (https://www.howtoforge.com/tutorial/how-to-create-docker-images-with-dockerfile/).
-    * Comando de creacion de imagen: ` sudo docker build -f $(pwd)/docker/Dockerfile-grafana -t grimoirelab/grafana:latest .`. -- Usar en path adecuado (dentro de /grimoirelab/).
-    * Comando ejecución contenedor: `sudo  docker run -p 127.0.0.1:5601:5601 -p 127.0.0.1:9200:9200 -p 127.0.0.1:3306:3306 -p 127.0.0.1:3000:3000 -v $(pwd)/credentials.cfg:/override.cfg -t grimoirelab/grafana` -- en home
-    * User de grafana en contenedor: admin admin.
+    * Se crea nuevo entrypoint. Me baso en `entrypoint-full.sh`. Se cambia la parte de Grafana.
+    * Comando de creacion de imagen: `docker build -f $(pwd)/docker/Dockerfile-grafana -t grimoirelab/grafana:latest .`. -- Usar en path adecuado (dentro de home/user/grimoirelab/).
+    * Comando ejecución contenedor: `docker run -p 127.0.0.1:5601:5601 -p 127.0.0.1:9200:9200 -p 127.0.0.1:3306:3306 -p 127.0.0.1:3000:3000 -v $(pwd)/credentials.cfg:/override.cfg -t grimoirelab/grafana` -- en home
+    * User/pass de grafana en contenedor: admin/admin.
   * Explorados filtros de grafana.
   * Github issues explorado.
 
-  docker exec -i -t grimoirelab/grafana env TERM=xterm /bin/bash --> contenedor ya lanzado
-  en contenedor cargar dashboards de grafana exportar importar
-
 ### PROBLEMAS
-  * el puerto 3000 de grafana no se cierra tras cada run del container. hace falta matar el proceso de grafana para liberar el puerto, si no el segundo container no se conecta :3000.
-  * 
+  * El puerto 3000 de grafana no se cierra tras cada run del container. hace falta matar el proceso de grafana para liberar el puerto, si no el segundo container no se conecta :3000 --> `sudo kill PID`.
+
+---
+
+
+## Sprint 10/10
+  * Exportar datasources/dashboards de Grafana local.
+  * Importar en contenedor datasources/dashboards.
+  * Llevar al día la memoria.
+
+### Proceso
+  * Para exportar datasources de Grafana en local:
+    * Nos basamos en: https://rmoff.net/2017/08/08/simple-export/import-of-data-sources-in-grafana/
+    * Modificamos con: `mkdir -p $(pwd)/data-sources && curl -s "http://localhost:3000/api/datasources"  -u admin:12341829as|jq -c -M '.[]'|split -l 1 - $(pwd)/data-sources/`
+  * Para exportar dashboards de Grafana en local:
+    * Lo mas facil es exportar a mano uno a uno en archivos JSON --> https://grafana.com/docs/reference/export_import/
+    * Los guardo en `/grimoirelab/docker/dashboards`
+  * Añadiendo datasources a la docker image:
+    * Modificamos `dockerfile-grafana`, para añadir este nuevo fichero y poder usarlo despues, con ADD. Movemos previamente data_sources a grimoirelab/docker).
+    * Modificamos `entrypoint-full.sh` para poder importar los indices de `data-sources` a Grafana.
+  * Añadiendo dashboards a la docker image:
+    * FALTA INSTALAR PLUGINS EN LA IMAGEN.
+    * Lo mas facil es mediante el aprovisionamiento que proporciona la API de Grafana: https://grafana.com/docs/administration/provisioning/#dashboards
+    * Creamos un fichero del estilo al tutorial y lo guardamos en `grimoirelab/docker/dashboard-config`
+    *
+
+### Añadidos
+  * Mencionar shortcuts en "uso grafana": https://grafana.com/docs/reference/keyboard_shortcuts/
+
+
 
 
 ---
+
+
+
 
 ## PROBLEMAS GENERALES
   * No se puede poner label en el eje x.

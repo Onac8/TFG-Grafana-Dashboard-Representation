@@ -100,22 +100,19 @@
   * Todos los plugins probados (ver arriba OKs).
   * COMPARACIÓN: Se pueden obtener diagramas casi idénticos. Hay algunos aspectos diferentes: apartado **problemas**.
   * PROS:
-    * Aspecto visual más bonito. Herramientas como Singlestat o Blendstat (plugin) permiten obtener un dato básico con su respectiva gráfica evolutiva
-      de fondo. Posibilidad de agrupar diferentes paneles por rows (add row), y clasificarlos según lo que muestren.
-    * Infinidad de plugins. Se han usado plugins para representar datos de distintas formas, utilidades... (ver arriba). Aunque ofrece también plugins para
-      poder utilizar muchas otras BBDD, aparte de las que vienen de serie (MariaDB, InfluxDB, ElasticSearch...).
-    * Bastantes apps. Se instalan junto a Grafana (Zabbix, Worldping...).
+    * Aspecto visual más bonito. Herramientas como Singlestat o Blendstat (plugin) permiten obtener un dato básico con su respectiva gráfica evolutiva de fondo. Posibilidad de agrupar diferentes paneles por rows (add row), y clasificarlos según lo que muestren.
+    * Infinidad de plugins. Se han usado plugins para representar datos de distintas formas, utilidades... (ver arriba). Aunque ofrece también plugins para poder utilizar muchas otras BBDD, aparte de las que vienen de serie (MariaDB, InfluxDB, ElasticSearch...).
+    * Bastantes apps. Se instalan junto a Grafana (Zabbix, Worldping, Worldmap...).
     * Interfaz más sencilla e intuitiva. Se permite manipular (editar, copiar, etc.) de manera más rápida y simple que en Kibana.
-    * ?
+    * Permite exportar dashboards muy facilmente (son ficheros JSON) o hacer snapshots de ellos
 
   * CONTRAS:
-    * Kibana posee el plugin `console`, que proporciona una interfaz que permite interactuar directamente con la API REST de Elasticsearch. Grafana no lo tiene.
+    * Kibana posee el plugin `console`, proporcionando una interfaz que permite interactuar directamente con la API REST de Elasticsearch. Grafana no lo tiene.
     * No se puede poner label en el eje x.
-    * No podemos poner intervalos de semanas, meses, años en los grafos. Máximo intervalos de refresco de 1d.
-    * No tenemos barras fijas con desplegables como en Kibana (p.e. Git -> Overwiew ; Github --> Issues).
+    * No tenemos barras fijas superiores con desplegables como en Kibana (p.e. Git -> Overwiew ; Github --> Issues).
     * Un poco tosco con las unidades. Es necesario cambiar hasta dos veces (en las zonas de metric y display) el tipo de unidad, depende de la visualización.
     * Un poco tosco con el dato a representar. Ejemplo: queremos avg o difference, tenemos que elegirlo en hasta dos sitios diferentes (como arriba).
-    ?
+    *
 
 
 ---
@@ -154,26 +151,38 @@
   * Llevar al día la memoria.
 
 ### Proceso
-  * Para exportar datasources de Grafana en local:
-    * Nos basamos en: https://rmoff.net/2017/08/08/simple-export/import-of-data-sources-in-grafana/
-    * Modificamos con: `mkdir -p $(pwd)/data-sources && curl -s "http://localhost:3000/api/datasources"  -u admin:12341829as|jq -c -M '.[]'|split -l 1 - $(pwd)/data-sources/`
-  * Para exportar dashboards de Grafana en local:
-    * Lo mas facil es exportar a mano uno a uno en archivos JSON --> https://grafana.com/docs/reference/export_import/
-    * Los guardo en `/grimoirelab/docker/dashboards`
-  * Añadiendo datasources a la docker image:
-    * Modificamos `dockerfile-grafana`, para añadir este nuevo fichero y poder usarlo despues, con ADD. Movemos previamente data_sources a grimoirelab/docker).
-    * Modificamos `entrypoint-full.sh` para poder importar los indices de `data-sources` a Grafana.
-  * Añadiendo dashboards a la docker image:
-    * FALTA INSTALAR PLUGINS EN LA IMAGEN.
-    * Lo mas facil es mediante el aprovisionamiento que proporciona la API de Grafana: https://grafana.com/docs/administration/provisioning/#dashboards
-    * Creamos un fichero del estilo al tutorial y lo guardamos en `grimoirelab/docker/dashboard-config`
-    *
+  * EXPORTACIÓN / IMPORTACIÓN (dos métodos):
+    * Exportando `grafana.db` directamente. Se encuentra en "/var/lib/grafana/". Tosco pero efectivo. Exporta toda la confi de usuario.
+    * Exportando datasources y dashboards por separado:
+      * Para exportar datasources de Grafana en local:
+        * Nos basamos en: https://rmoff.net/2017/08/08/simple-export/import-of-data-sources-in-grafana/
+        * Modificamos con: `mkdir -p $(pwd)/data-sources && curl -s "http://localhost:3000/api/datasources"  -u admin:12341829as|jq -c -M '.[]'|split -l 1 - $(pwd)/data-sources/`
+      * Para exportar dashboards de Grafana en local:
+        * Lo mas facil es exportar a mano uno a uno en archivos JSON --> https://grafana.com/docs/reference/export_import/
+        * Los guardo en `/grimoirelab/docker/dashboards`
+      * Añadiendo datasources a la docker image:
+        * Modificamos `dockerfile-grafana`, para añadir este nuevo fichero y poder usarlo despues, con ADD. Movemos previamente data_sources a grimoirelab/docker).
+        * Modificamos `entrypoint-full.sh` para poder importar los indices de `data-sources` a Grafana.
+        * Añadiendo dashboards a la docker image:
+        * Lo mas facil es mediante el aprovisionamiento que proporciona la API de Grafana: https://grafana.com/docs/administration/provisioning/#dashboards
+        * Creamos un fichero del estilo al tutorial y lo guardamos en `grimoirelab/docker/dashboard-config`
 
 ### Añadidos
   * Mencionar shortcuts en "uso grafana": https://grafana.com/docs/reference/keyboard_shortcuts/
 
 
+## Extra
+  * Analizar un proyecto especifico (repos de ES, Grafana oficiales) y utilizar exactamente el mismo contenedor pero cambiando projects.json (ver documentacion en grimoirelab/docker/read.me || docker/projects.json).
+  * Posibilidad de desplegar varios contenedores con proyectos diferentes. Para ello, guardar en local lo que recogemos al desplegar (ver read.me, apartado grimoirelab/full --> -v $(pwd)/es-data:/var/lib/elasticsearch).
 
+  By default, Elasticsearch will store indexes within the container image, which means they are not persistent if the image shuts down. But you can mount a local directory for Elasticsearch to write the indexes in it. this way they will be available from one run of the image to the next one. For example, to let Elasticsearch use directory es-data to write the indexes:
+    $ docker run -p 127.0.0.1:9200:9200 -p 127.0.0.1:5601:5601 \
+    -v $(pwd)/mytoken.cfg:/override.cfg \
+    -v $(pwd)/logs:/logs \
+    -v $(pwd)/es-data:/var/lib/elasticsearch \
+    -t grimoirelab/full
+
+  * Meterse en el cirio de CAULDRON. Posibilidad de integracion de Grafana con una aplicación en la web.
 
 ---
 

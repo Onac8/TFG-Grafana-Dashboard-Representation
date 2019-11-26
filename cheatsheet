@@ -28,6 +28,15 @@ GET git_grimoirelab-raw/items/_search (FILTRADO SIMPLE)
 	}
 }
 
+GET git_grimoirelab/items/_search
+{
+	"query": {
+		"match": {
+      "Author_org_name": "Bitergia"
+    }
+	}
+}
+
 PROBLEMAS--
 Liberar espacio dockers:
     sudo docker system df --> ver espacio usado por dockers

@@ -104,7 +104,9 @@
     * Infinidad de plugins. Se han usado plugins para representar datos de distintas formas, utilidades... (ver arriba). Aunque ofrece también plugins para poder utilizar muchas otras BBDD, aparte de las que vienen de serie (MariaDB, InfluxDB, ElasticSearch...).
     * Bastantes apps. Se instalan junto a Grafana (Zabbix, Worldping, Worldmap...).
     * Interfaz más sencilla e intuitiva. Se permite manipular (editar, copiar, etc.) de manera más rápida y simple que en Kibana.
-    * Permite exportar dashboards muy facilmente (son ficheros JSON) o hacer snapshots de ellos
+    * Permite exportar dashboards muy facilmente (son ficheros JSON) o hacer snapshots de ellos.
+    * Permite crear playlists de varios dashboards You can use playlists to cycle dashboards on TVs without user control. (https://grafana.com/docs/reference/playlist/)
+    * Sencillo sistema de alertas para dashboards en tiempo real. https://grafana.com/docs/alerting/rules/ https://grafana.com/docs/alerting/notifications/
 
   * CONTRAS:
     * Kibana posee el plugin `console`, proporcionando una interfaz que permite interactuar directamente con la API REST de Elasticsearch. Grafana no lo tiene.
@@ -184,6 +186,8 @@
 
   * Meterse en el cirio de CAULDRON. Posibilidad de integracion de Grafana con una aplicación en la web.
 
+  * DB guardada localmente:
+   docker run -p 127.0.0.1:5601:5601 -p 127.0.0.1:9200:9200 -p 127.0.0.1:3306:3306 -p 127.0.0.1:3000:3000 -v $(pwd)/credentials.cfg:/override.cfg -v $(pwd)/es-data:/var/lib/elasticsearch -t grimoirelab/grafana
 ---
 
 

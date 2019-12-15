@@ -84,10 +84,40 @@ RUN wget https://dl.grafana.com/oss/release/${GRAF}_amd64.deb && \
     sudo dpkg -i ${GRAF}_amd64.deb && \
     rm ${GRAF}_amd64.deb
 
-RUN sudo service grafana-server start
-ADD docker/entrypoint-full.sh entrypoint.sh
+#Installing Grafana Plugins
+RUN sudo grafana-cli plugins install grafana-piechart-panel
+RUN sudo grafana-cli plugins install grafana-worldmap-panel
+RUN sudo grafana-cli plugins install raintank-worldping-app
+RUN sudo grafana-cli plugins install michaeldmoore-annunciator-panel 
+RUN sudo grafana-cli plugins install farski-blendstat-panel
+RUN sudo grafana-cli plugins install petrslavotinek-carpetplot-panel
+RUN sudo grafana-cli plugins install digrich-bubblechart-panel
+RUN sudo grafana-cli plugins install briangann-datatable-panel
+RUN sudo grafana-cli plugins install jdbranham-diagram-panel
+RUN sudo grafana-cli plugins install larona-epict-panel
+RUN sudo grafana-cli plugins install citilogics-geoloop-panel
+RUN sudo grafana-cli plugins install bessler-pictureit-panel
+RUN sudo grafana-cli plugins install corpglory-progresslist-panel
+RUN sudo grafana-cli plugins install digiapulssi-breadcrumb-panel
+RUN sudo grafana-cli plugins install yesoreyeram-boomtheme-panel
+RUN sudo grafana-cli plugins install michaeldmoore-multistat-panel
+RUN sudo grafana-cli plugins install snuids-radar-panel
+RUN sudo grafana-cli plugins install natel-plotly-panel
+RUN sudo grafana-cli plugins install grafana-polystat-panel
+RUN sudo grafana-cli plugins install flant-statusmap-panel
+RUN sudo grafana-cli plugins install grafana-clock-panel
+
+#Adding files
+ADD docker/entrypoint-full.sh /entrypoint.sh
+ADD docker/grafana.db /var/lib/grafana/
+#ADD docker/data-sources /data-sources
+#ADD docker/dashboards /dashboards
+#ADD docker/dashboards-conf.yaml /etc/grafana/provisioning/dashboards
+
 USER root
-RUN chmod 777 entrypoint.sh
+RUN chmod 777 /entrypoint.sh
+#RUN chmod -R 755 /data-sources
+#RUN chmod -R 755 /dashboards
 #VOLUME /var/lib/elasticsearch
 
 # Entrypoint

@@ -33,23 +33,33 @@ sudo netstat -cvulntp |grep -m 1 ".*:3306.*LISTEN.*"
 echo "MariaDB started"
 
 # Start Kibana
-#echo "Starting Kibiter"
-#${KB}-linux-x86_64/bin/kibana > kibana.log 2>&1 &
+echo "Starting Kibiter"
+${KB}-linux-x86_64/bin/kibana > kibana.log 2>&1 &
 
-#echo "Waiting for Kibiter to start..."
-#sleep .2
-#sudo netstat -cvulntp |grep -m 1 ".*:5601.*LISTEN.*"
-#until $(curl --output /dev/null --silent --head --fail http://127.0.0.1:5601); do
-#    printf '.'
-#    sleep 2
-#done
-#echo "Kibiter started"
+echo "Waiting for Kibiter to start..."
+sleep .2
+sudo netstat -cvulntp |grep -m 1 ".*:5601.*LISTEN.*"
+until $(curl --output /dev/null --silent --head --fail http://127.0.0.1:5601); do
+    printf '.'
+    sleep 2
+done
+echo "Kibiter started"
 
 # Start Grafana
 echo "Starting Grafana"
 sudo chown -R grafana.grafana /etc/grafana
-sudo service grafana-server start 
+sudo service grafana-server start
+until $(curl --output /dev/null --silent --head --fail http://127.0.0.1:3000); do
+    printf '.'
+    sleep 2
+done
 echo "Grafana started"
+
+# Importing Elasticsearch index in Grafana
+#for i in /data-sources/*; do \
+#  $(curl --output /dev/null -X "POST" "http://127.0.0.1:3000/api/datasources" -H "Content-Type: application/json" --user admin:admin --data-binary @$i)
+#  echo "Added database $i"
+#done
 
 if [[ $RUN_MORDRED ]] && [[ $RUN_MORDRED = "NO" ]]; then
   echo

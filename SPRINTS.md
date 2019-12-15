@@ -92,7 +92,7 @@
 
 
 ## Sprint 30-5
-  * Explorar el resto de plugins de grafana
+  * Explorar el resto de plugins de grafana (MENCIONAR AQUI LOS PLUGINS AVANZADOS, EN EL OTRO SPRINT LOS BASICOS) (COMPARACION EN SECCION 5, PASAR RAPIDO DE ESTE SPRINT)
   * Comparar los resultados obtenidos con los dashboards de Kibana.
   * Explicar las limitaciones o mejoras de Grafana con respecto a Kibana.
 

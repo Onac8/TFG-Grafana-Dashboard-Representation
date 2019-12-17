@@ -154,7 +154,7 @@
 
 ### Proceso
   * EXPORTACIÓN / IMPORTACIÓN (dos métodos):
-    * Exportando `grafana.db` directamente. Se encuentra en "/var/lib/grafana/". Tosco pero efectivo. Exporta toda la confi de usuario.
+    * Exportando `grafana.db` directamente. Se encuentra en "/var/lib/grafana/". Tosco pero efectivo. Exporta toda la confi de usuario. Utilizar ADD en dockerfile.
     * Exportando datasources y dashboards por separado:
       * Para exportar datasources de Grafana en local:
         * Nos basamos en: https://rmoff.net/2017/08/08/simple-export/import-of-data-sources-in-grafana/
@@ -165,9 +165,9 @@
       * Añadiendo datasources a la docker image:
         * Modificamos `dockerfile-grafana`, para añadir este nuevo fichero y poder usarlo despues, con ADD. Movemos previamente data_sources a grimoirelab/docker).
         * Modificamos `entrypoint-full.sh` para poder importar los indices de `data-sources` a Grafana.
-        * Añadiendo dashboards a la docker image:
+      * Añadiendo dashboards a la docker image:
         * Lo mas facil es mediante el aprovisionamiento que proporciona la API de Grafana: https://grafana.com/docs/administration/provisioning/#dashboards
-        * Creamos un fichero del estilo al tutorial y lo guardamos en `grimoirelab/docker/dashboard-config`
+        * Creamos un fichero del estilo al tutorial y lo guardamos en `grimoirelab/docker/dashboard-config.yaml` y despues añadimos con ADD el fichero en dockerfile a la imagen.
 
 ### Añadidos
   * Mencionar shortcuts en "uso grafana": https://grafana.com/docs/reference/keyboard_shortcuts/

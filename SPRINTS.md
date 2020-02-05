@@ -144,6 +144,7 @@
 ### PROBLEMAS
   * El puerto 3000 de grafana no se cierra tras cada run del container. hace falta matar el proceso de grafana para liberar el puerto, si no el segundo container no se conecta :3000 --> `sudo kill PID`.
 
+
 ---
 
 
@@ -172,9 +173,19 @@
 ### Añadidos
   * Mencionar shortcuts en "uso grafana": https://grafana.com/docs/reference/keyboard_shortcuts/
 
+### PROBLEMAS GENERALES
+  * No se puede poner label en el eje x.
+  * RESUELTO -- Pie Chart can only handle time series data, if you look at the handler
+  * RESUELTO -- No podemos poner intervalos de semanas, meses, años en los grafos. Máximo intervalos de refresco de 1d. --> (min time interval en "queries")
+  * RESUELTO -- En grafos, se puede poner como eje x algo distinto a un eje de tiempos, poniendo "serie" en opciones de X axis, y group by grupo. --> RESUELTO
+  * RESUELTO -- No se puede un "unique count of string field" (count of hash commits p.e.), siempre nos pide group by. En Kibana es un simple unique count.
+  * POR QUE EN GIT OVERWIEW, EN AUTHORS, VARIA TANTO SI PONEMOS git (metadata__timestamp) vs git commit (grimoire_creation_date).
+
 
 ## Extra
   * Analizar un proyecto especifico (repos de ES, Grafana oficiales) y utilizar exactamente el mismo contenedor pero cambiando projects.json (ver documentacion en grimoirelab/docker/read.me || docker/projects.json).
+  * https://github.com/chaoss/grimoirelab/blob/master/docker/projects.json
+  * https://github.com/grafana
   * Posibilidad de desplegar varios contenedores con proyectos diferentes. Para ello, guardar en local lo que recogemos al desplegar (ver read.me, apartado grimoirelab/full --> -v $(pwd)/es-data:/var/lib/elasticsearch).
 
   By default, Elasticsearch will store indexes within the container image, which means they are not persistent if the image shuts down. But you can mount a local directory for Elasticsearch to write the indexes in it. this way they will be available from one run of the image to the next one. For example, to let Elasticsearch use directory es-data to write the indexes:
@@ -193,17 +204,23 @@
 
 
 
-## PROBLEMAS GENERALES
-  * No se puede poner label en el eje x.
-  * RESUELTO -- Pie Chart can only handle time series data, if you look at the handler
-  * RESUELTO -- No podemos poner intervalos de semanas, meses, años en los grafos. Máximo intervalos de refresco de 1d. --> (min time interval en "queries")
-  * RESUELTO -- En grafos, se puede poner como eje x algo distinto a un eje de tiempos, poniendo "serie" en opciones de X axis, y group by grupo. --> RESUELTO
-  * RESUELTO -- No se puede un "unique count of string field" (count of hash commits p.e.), siempre nos pide group by. En Kibana es un simple unique count.
-  * POR QUE EN GIT OVERWIEW, EN AUTHORS, VARIA TANTO SI PONEMOS git (metadata__timestamp) vs git commit (grimoire_creation_date).
+
+## CAMBIOS MEMORIA / CONTENIDO ----------------------------------------------------------------------
+  * Subiendo imagen a dockerhub: https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html
+    * Link a proyecto : https://hub.docker.com/repository/docker/onac8/grafana-grimoirelab
+  * 
 
 
-## FIN ---------
 
+
+
+
+
+
+
+
+
+## FIN ----------------------------------------------------------------------------------------------
 ### Estructura del TFG (desarrollo):
   1. Evaluacion de grafana: plugins relevantes o no, capturas + que se pueda mostrar comentario relevante de ellos
 

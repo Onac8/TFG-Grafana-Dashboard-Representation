@@ -1,0 +1,67 @@
+GrimoireLab en vez de grimoire lab
+introduccion mezclada con objetivos () --> proyecto de integracion (principalmente)
+estado del arte y tecnologias utilizadas --> subseccion de sistemas de visualizacion (primeramente kibana tablog, cauldron en integracion, github estatistics)
+tema 5 - demo del producto final entero (de principio a fin)
+bibliografia (referencia fundamental, no documentacion) --> mas referencias, a herramientas de estado del arte
+
+revisar introduccion (estilo), primer parrafo cambiar y remontarse menos
+suficiente info para que la gente entienda. representacion de datos, big data, servicios en la nube hablar de ello. mencionar grimoirelab, grafana y demas. ver si se permite realizar con grafana lo que hay en Kibana. se pueden utilizar
+otro sistema de visualizacion, pero utilizamos grafana
+contexto secundario: el sistema de despliega con contenedores, se produce un despliegue asi? si.
+contexto terciario: datos reales. proyectos concretos. visualizaciones especiales con grafana que en kibana no se pueden o son mas dificiles
+
+
+OBJETIVOS: objetivo principal solo el 1. cambiar el resto a auxiliares o secundarios. Adornar el 1: grafana es libre, facil de integrar con elasticsearch...
+consecucion de objetivos. principal cumplido
+objetivos secundarios, cambiar lo de "lo aprendido", ya que esta mencionado en el capitulo de conclusiones
+
+planificacion temporal: mudar al tema conclusiones. hablar del tema de integracion al final.
+
+estado del arte: mencionar para QUE se ha utilizado la herramienta, no de manera general.
+en kibana (captura de kibana, ya que no se utiliza logstash!!, no se utiliza la pila elk mencionar) --> COHERENCIA
+Esquema de grimoirelab arriba, en vez de abajo. --> referenciar imagen o crear imagen esquemita de grimoirelab es y grafana
+
+capitulo 4
+scrum -- no es scrum como tal, adaptado --  "Debido a que nuestro equipo de desarrollo es muy pequeño (dos personas) ... "las reuniones son mas sencillas y especiales y son entre tutor y alumno, objetivos intermedios o metas (backlogs), en cada reunion se han repasado
+lo anterior y demas".
+
+imagen 24h -- reuniones cada semanas
+reunion de revision -- siguiente sprints
+project manager (jesus) - equipo de desarrollo YO
+
+para cada uno de los sprints presento lo siguiente y objetivos de cada uno de los sprints!
+
+arquitectura general -- mover 4.2 y figura al final: al final de este tema (4) o en el capitulo de resultados (ejecucion de este proyecto).
+
+cambiar titulos de sprints, mas concisos. al principio de cada sprints mostrar objetivos y resultados
+
+3grafana (sustituir grafana por kibana entre otros)
+
+4dashboards (objetivos poner / resultados poner)
+
+5. objetivos y resultados tambien (cambiar nombre proyecto de grimoirelab/grafana a un nombre mio) --> bien para futura demo en presentacion (mira que facil es hacer docker run)
+
+EN "VER SECCION XX" DECIR EXACTAMENTE QUE SE HACE EN LA REFERENCIA
+
+CAPITULO 5
+resultado final del proyecto entero, de principio a fin, como se ha desplegado, como se hace y demas
+5.3 mencionar en 5.1 (general y refernciar)
+
+TEMA 6
+cuantificar lo hecho (dashboards totales, plugins, ...)
+quitar lo de 4 de 5 objetivos (desmerece el trabajo). no era un objetivo como tal y fue surgiendo. hablar de ello en trbajos futuros
+
+en asignaturas objetificar bien. lo de C no vale. cambiar, orientar al proyecto
+lecciones aprendidas: 3.5. Trabajo con bases de datos en general, nosql en particular, en particular elasticsearch
+mas lecciones: sistemas de visualizacion, mas cosas en docker, sistema complejo, completo, funcionar, temas de integracion (hablar sobre ello, valorarme)
+
+APENDICE
+TODAS LAS CAPTURAS QUE SE HAN hecho
+
+SUBIR CONTENEDOR A DOCKERHUB
+
+/var/lib/mysql --> DONDE ESCRIBE MARIADB LOS DATOS DONDE LOS ESCRIBE, AQUI
+
+GITHUB PAGES CREAR
+
+VIDEO CAPTURAS POR SI FALLA LA DEMOSTRACIÓN EN VIVO Y PDF CON PRESENTACIÓN/TRANSPARENCIAS.

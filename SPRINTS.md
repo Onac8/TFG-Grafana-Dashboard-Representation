@@ -208,7 +208,7 @@
 ## CAMBIOS MEMORIA / CONTENIDO ----------------------------------------------------------------------
   * Subiendo imagen a dockerhub: https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html
     * Link a proyecto : https://hub.docker.com/repository/docker/onac8/grafana-grimoirelab
-  * 
+  *
 
 
 

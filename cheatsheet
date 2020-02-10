@@ -1,19 +1,29 @@
+DOCKER------------------------------------------------------------
+
 sudo docker container ls --> ver containers abiertos y su id para cerrar.
-sudo docker stop grimoirelab/full --> para el contenedor
-sudo docker start grimoirelab/full
 sudo docker ps --> estado
 sudo docker kill + TAB (para ver nombre de docker)
 sudo docker kill "ID", docker stop "ID", docker rm "ID" --> ver documentacion (cerrar container, liberar puerto).
 sudo docker inspect grimoirelab/full | grep 'elastic' --> version elasticsearch (6.1.0),...
-sudo  docker run -p 127.0.0.1:5601:5601 -p 127.0.0.1:9200:9200 -p 127.0.0.1:3306:3306 -v $(pwd)/credentials.cfg:/override.cfg -t grimoirelab/full
-docker exec -i -t grimoirelab/grafana env TERM=xterm /bin/bash --> abrir terminal en contenedor ya lanzado (para ver sus directorios)
+docker exec -i -t DOCKER_ID env TERM=xterm /bin/bash --> abrir terminal en contenedor ya lanzado (para ver sus directorios)
 
-Grafana
-admin -- 12341829as
+Liberar espacio dockers:
+    sudo docker system df --> ver espacio usado por dockers
+    sudo docker system prune --> eliminar containers no usados
+    sudo docker system prune -a --> todo
+    df -h --> ver disco usado
+
+docker build -f $(pwd)/docker/Dockerfile-grafana -t grimoirelab/grafana:latest .
+docker run -p 127.0.0.1:5601:5601 -p 127.0.0.1:9200:9200 -p 127.0.0.1:3306:3306 -p 127.0.0.1:3000:3000 -v $(pwd)/credentials.cfg:/override.cfg -t grimoirelab/grafana
+
+
+Grafana------------------------------------------------------------
+user:pass --> admin : 12341829as
 sudo service grafana-server start
 sudo service grafana-server restart
 
-ElasticSearch------
+
+ElasticSearch------------------------------------------------------
 GET 'localhost:9200/_cat/indices?v&pretty' (url)
 GET _cat/indices (cliente)
 GET git_grimoirelab-raw/items/_search (visualizar todas las entradas)
@@ -37,9 +47,4 @@ GET git_grimoirelab/items/_search
 	}
 }
 
-PROBLEMAS--
-Liberar espacio dockers:
-    sudo docker system df --> ver espacio usado por dockers
-    sudo docker system prune --> eliminar containers no usados
-    sudo docker system prune -a --> todo
-    df -h --> ver disco usado
+

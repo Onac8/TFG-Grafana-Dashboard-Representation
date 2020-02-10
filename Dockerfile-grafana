@@ -109,13 +109,14 @@ RUN sudo grafana-cli plugins install grafana-clock-panel
 
 #Adding files
 ADD docker/entrypoint-full.sh /entrypoint.sh
-ADD docker/grafana.db /var/lib/grafana/
+ADD docker/grafana.db /var/lib/grafana/grafana.db
 #ADD docker/data-sources /data-sources
 #ADD docker/dashboards /dashboards
 #ADD docker/dashboards-conf.yaml /etc/grafana/provisioning/dashboards
 
 USER root
 RUN chmod 777 /entrypoint.sh
+RUN chmod 777 /var/lib/grafana/grafana.db
 #RUN chmod -R 755 /data-sources
 #RUN chmod -R 755 /dashboards
 #VOLUME /var/lib/elasticsearch

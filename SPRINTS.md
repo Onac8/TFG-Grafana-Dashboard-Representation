@@ -204,53 +204,6 @@
 
 
 
-
 ## CAMBIOS MEMORIA / CONTENIDO ----------------------------------------------------------------------
   * Subiendo imagen a dockerhub: https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html
     * Link a proyecto : https://hub.docker.com/repository/docker/onac8/grafana-grimoirelab
-  *
-
-
-
-
-
-
-
-
-
-
-
-## FIN ----------------------------------------------------------------------------------------------
-### Estructura del TFG (desarrollo):
-  1. Evaluacion de grafana: plugins relevantes o no, capturas + que se pueda mostrar comentario relevante de ellos
-
-  2. Demo ???:
-    * 1,2,... dashboards con los paneles nativos de grafana donde se muestren datos coherentes de la BD (no repetir graficos, tablas,...)
-    * evaluacion especifica --> mismos datos que en kibana, ver si en grafana se pueden hacer igual o no y comentarlo.
-    * 1,2,  dashboards con los distintos plugins utilizados (tengan o no sentido)
-
-  3. Resolver problema concreto
-    * dashboards especificos para cada publico (visual, datos, ...)
-    * dashboards de persona de proyecto especifica. [Ejemplos de lucene query con ES](https://grafana.com/plugins/snuids-radar-panel)
-    * dashboard de como sale o entra gente del proyecto (misma grafica donde se vea gente que entra/sale)
-
-  4. Poner todo en la nube
-
-  5. Utilizar bd mysql (incluido en el contenedor). dashboards separados de ES y MYSQL, o dashboards combinados de ES y MYsql
-
-
-
-## MEMORIA
-  * OK -- Hojear memorias de gsyc, mirar latex, coger template de gregorio. normativa de la memoria (pagina urjc y escuela de teleco)
-  estructura.
-  * OK -- Introducion (inicio, voy a hacer esto o aquello y por que de este proyecto y grafana vs kibana, datos usados (libres) .... objetivos concretos)
-  * OK -- Estado del arte (tecnologias similares), presentacion de la tecnologia utilizada kibana es,...) tableau, manyeyes... -- 15-20pags max min 10
-  * Como se ha hecho el proyecto, estructuracion -- scrum, sprints -- ciclos diferentes (diagrama de tiempo estimado en ciclos) -- +-10pags
-  * resultados:
-    * 1,2,3,4,5 --> hablar en profundidad de cada apartado +-20pags
-  * conclusiones (he visto que se pueden hacer los objetivos o no, evaluacion de grafana, problemas, cosas relacionadas (cloud, gitpage,...) --> hacerse VALER AQUI) --
-  * bibliografia
-  * referencias
-  * 60 paginas memoria?
-
-  * jekill, pagina en github para proyecto (web)

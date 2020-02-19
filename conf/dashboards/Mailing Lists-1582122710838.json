@@ -1,0 +1,1158 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": 14,
+  "links": [],
+  "panels": [
+    {
+      "blendName": "total",
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": true,
+      "colors": [
+        "#299c46",
+        "#FFEE52",
+        "#d44a3a"
+      ],
+      "datasource": "mail grimoire_lab creation_date",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 0,
+        "y": 0
+      },
+      "hideTimeOverride": false,
+      "id": 10,
+      "interval": "",
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgb(56, 45, 29)",
+        "full": false,
+        "lineColor": "#FA6400",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "grimoire_creation_date",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "meta": {},
+              "settings": {},
+              "type": "count"
+            }
+          ],
+          "refId": "A",
+          "timeField": "grimoire_creation_date"
+        }
+      ],
+      "thresholds": "",
+      "timeFrom": "5y",
+      "timeShift": null,
+      "title": "Emails",
+      "type": "farski-blendstat-panel",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "total"
+    },
+    {
+      "aliasColors": {
+        "Count": "red"
+      },
+      "bars": true,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "mail grimoire_lab creation_date",
+      "decimals": 2,
+      "fill": 1,
+      "gridPos": {
+        "h": 5,
+        "w": 9,
+        "x": 6,
+        "y": 0
+      },
+      "id": 12,
+      "interval": "1M",
+      "legend": {
+        "alignAsTable": false,
+        "avg": true,
+        "current": false,
+        "max": false,
+        "min": false,
+        "rightSide": false,
+        "show": true,
+        "total": true,
+        "values": true
+      },
+      "lines": false,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "grimoire_creation_date",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "refId": "A",
+          "timeField": "grimoire_creation_date"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": "5y",
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Emails",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": "Count",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {
+        "Count": "rgb(255, 255, 255)",
+        "Unique Count author_uuid": "rgb(186, 186, 186)"
+      },
+      "bars": true,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "mail grimoire_lab creation_date",
+      "decimals": null,
+      "fill": 1,
+      "gridPos": {
+        "h": 5,
+        "w": 9,
+        "x": 15,
+        "y": 0
+      },
+      "hideTimeOverride": true,
+      "id": 14,
+      "interval": "1M",
+      "legend": {
+        "alignAsTable": false,
+        "avg": false,
+        "current": false,
+        "max": true,
+        "min": true,
+        "rightSide": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": false,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "Count",
+          "yaxis": 1
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "grimoire_creation_date",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "author_uuid",
+              "id": "1",
+              "meta": {},
+              "settings": {},
+              "type": "cardinality"
+            }
+          ],
+          "refId": "A",
+          "timeField": "grimoire_creation_date"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": "5y",
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Email Senders",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": "Count",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "blendName": "total",
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": true,
+      "colors": [
+        "#299c46",
+        "#FFEE52",
+        "#d44a3a"
+      ],
+      "datasource": "mail_grimoirelab",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 6,
+        "x": 0,
+        "y": 4
+      },
+      "hideTimeOverride": true,
+      "id": 8,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgb(56, 45, 29)",
+        "full": false,
+        "lineColor": "#FA6400",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "metadata__timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "author_uuid",
+              "id": "1",
+              "meta": {},
+              "settings": {},
+              "type": "cardinality"
+            }
+          ],
+          "refId": "A",
+          "timeField": "metadata__timestamp"
+        }
+      ],
+      "thresholds": "",
+      "timeFrom": "5y",
+      "timeShift": null,
+      "title": "Email Senders",
+      "type": "farski-blendstat-panel",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "total"
+    },
+    {
+      "columns": [],
+      "datasource": "mail grimoire_lab creation_date",
+      "fontSize": "100%",
+      "gridPos": {
+        "h": 5,
+        "w": 9,
+        "x": 6,
+        "y": 5
+      },
+      "hideTimeOverride": true,
+      "id": 16,
+      "links": [],
+      "options": {},
+      "pageSize": null,
+      "scroll": true,
+      "showHeader": true,
+      "sort": {
+        "col": null,
+        "desc": false
+      },
+      "styles": [
+        {
+          "alias": "Project",
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "pattern": "project",
+          "type": "string"
+        },
+        {
+          "alias": "Emails",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "decimals": 2,
+          "link": false,
+          "pattern": "Count",
+          "thresholds": [],
+          "type": "number",
+          "unit": "locale"
+        },
+        {
+          "alias": "Senders",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "Unique Count",
+          "thresholds": [],
+          "type": "number",
+          "unit": "locale"
+        }
+      ],
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "project",
+              "id": "2",
+              "settings": {
+                "min_doc_count": 1,
+                "order": "desc",
+                "orderBy": "_count",
+                "size": "0"
+              },
+              "type": "terms"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "type": "count"
+            },
+            {
+              "field": "author_uuid",
+              "id": "3",
+              "meta": {},
+              "settings": {},
+              "type": "cardinality"
+            }
+          ],
+          "refId": "A",
+          "timeField": "grimoire_creation_date"
+        }
+      ],
+      "timeFrom": "5y",
+      "timeShift": null,
+      "title": "Projects",
+      "transform": "table",
+      "type": "table"
+    },
+    {
+      "aliasColors": {},
+      "bars": true,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "mail_grimoirelab",
+      "fill": 1,
+      "gridPos": {
+        "h": 5,
+        "w": 9,
+        "x": 15,
+        "y": 5
+      },
+      "id": 22,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": false,
+        "total": false,
+        "values": false
+      },
+      "lines": false,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "fake": true,
+              "field": "tz",
+              "id": "4",
+              "settings": {
+                "min_doc_count": 1,
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "metadata__timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "refId": "A",
+          "timeField": "metadata__timestamp"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Time Zone Emails (+/- UTC)",
+      "tooltip": {
+        "shared": false,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "series",
+        "name": null,
+        "show": true,
+        "values": [
+          "total"
+        ]
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": "Emails",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "blendName": "total",
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": true,
+      "colors": [
+        "#299c46",
+        "#FFEE52",
+        "#d44a3a"
+      ],
+      "datasource": "mail_grimoirelab",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 6,
+        "x": 0,
+        "y": 7
+      },
+      "hideTimeOverride": true,
+      "id": 6,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgb(56, 45, 29)",
+        "full": false,
+        "lineColor": "#FA6400",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "metadata__timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "list",
+              "id": "1",
+              "meta": {},
+              "settings": {},
+              "type": "cardinality"
+            }
+          ],
+          "refId": "A",
+          "timeField": "metadata__timestamp"
+        }
+      ],
+      "thresholds": "",
+      "timeFrom": "5y",
+      "timeShift": null,
+      "title": "Mailing Lists",
+      "type": "farski-blendstat-panel",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "total"
+    },
+    {
+      "columns": [],
+      "datasource": "mail grimoire_lab creation_date",
+      "fontSize": "100%",
+      "gridPos": {
+        "h": 8,
+        "w": 15,
+        "x": 0,
+        "y": 10
+      },
+      "hideTimeOverride": true,
+      "id": 18,
+      "links": [],
+      "options": {},
+      "pageSize": null,
+      "scroll": true,
+      "showHeader": true,
+      "sort": {
+        "col": null,
+        "desc": false
+      },
+      "styles": [
+        {
+          "alias": "Email Sender",
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "pattern": "author_name",
+          "type": "string"
+        },
+        {
+          "alias": "Emails",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "decimals": 2,
+          "link": false,
+          "pattern": "Count",
+          "thresholds": [],
+          "type": "number",
+          "unit": "locale"
+        },
+        {
+          "alias": "Projects",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "Unique Count project",
+          "thresholds": [],
+          "type": "number",
+          "unit": "locale"
+        },
+        {
+          "alias": "Mailing Lists",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "Unique Count list",
+          "thresholds": [],
+          "type": "number",
+          "unit": "locale"
+        },
+        {
+          "alias": "Avg. Characters",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 3,
+          "mappingType": 1,
+          "pattern": "Average",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        }
+      ],
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "author_name",
+              "id": "2",
+              "settings": {
+                "min_doc_count": 1,
+                "order": "desc",
+                "orderBy": "_count",
+                "size": "0"
+              },
+              "type": "terms"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "type": "count"
+            },
+            {
+              "field": "project",
+              "id": "3",
+              "meta": {},
+              "settings": {},
+              "type": "cardinality"
+            },
+            {
+              "field": "list",
+              "id": "4",
+              "meta": {},
+              "settings": {},
+              "type": "cardinality"
+            },
+            {
+              "field": "size",
+              "id": "5",
+              "meta": {},
+              "settings": {},
+              "type": "avg"
+            }
+          ],
+          "refId": "A",
+          "timeField": "grimoire_creation_date"
+        }
+      ],
+      "timeFrom": "5y",
+      "timeShift": null,
+      "title": "Email Senders",
+      "transform": "table",
+      "type": "table"
+    },
+    {
+      "aliasColors": {},
+      "breakPoint": "50%",
+      "cacheTimeout": null,
+      "combine": {
+        "label": "Others",
+        "threshold": "0.03"
+      },
+      "datasource": "mail_grimoirelab",
+      "fontSize": "80%",
+      "format": "short",
+      "gridPos": {
+        "h": 8,
+        "w": 9,
+        "x": 15,
+        "y": 10
+      },
+      "id": 24,
+      "interval": null,
+      "legend": {
+        "header": "Emails",
+        "percentage": false,
+        "show": true,
+        "sideWidth": null,
+        "sort": "current",
+        "sortDesc": true,
+        "values": true
+      },
+      "legendType": "Right side",
+      "links": [],
+      "maxDataPoints": 3,
+      "nullPointMode": "connected",
+      "options": {},
+      "pieType": "pie",
+      "strokeWidth": "1",
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "fake": true,
+              "field": "author_org_name",
+              "id": "3",
+              "settings": {
+                "min_doc_count": 1,
+                "order": "desc",
+                "orderBy": "_count",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "metadata__timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "refId": "A",
+          "timeField": "metadata__timestamp"
+        }
+      ],
+      "timeFrom": "5y",
+      "timeShift": null,
+      "title": "Organization commits",
+      "type": "grafana-piechart-panel",
+      "valueName": "current"
+    },
+    {
+      "columns": [],
+      "datasource": "mail_grimoirelab",
+      "fontSize": "100%",
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 18
+      },
+      "hideTimeOverride": true,
+      "id": 26,
+      "links": [],
+      "options": {},
+      "pageSize": null,
+      "scroll": true,
+      "showHeader": true,
+      "sort": {
+        "col": 0,
+        "desc": true
+      },
+      "styles": [
+        {
+          "alias": "Mailing List",
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "pattern": "list",
+          "type": "string"
+        },
+        {
+          "alias": "Emails",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "decimals": 2,
+          "pattern": "Count",
+          "thresholds": [],
+          "type": "number",
+          "unit": "locale"
+        },
+        {
+          "alias": "Senders",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "Unique Count author_uuid",
+          "thresholds": [],
+          "type": "number",
+          "unit": "locale"
+        },
+        {
+          "alias": "Organizations",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "Unique Count author_org_name",
+          "thresholds": [],
+          "type": "number",
+          "unit": "locale"
+        }
+      ],
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "list",
+              "id": "2",
+              "settings": {
+                "min_doc_count": 1,
+                "order": "desc",
+                "orderBy": "_count",
+                "size": "0"
+              },
+              "type": "terms"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "type": "count"
+            },
+            {
+              "field": "author_uuid",
+              "id": "3",
+              "meta": {},
+              "settings": {},
+              "type": "cardinality"
+            },
+            {
+              "field": "author_org_name",
+              "id": "4",
+              "meta": {},
+              "settings": {},
+              "type": "cardinality"
+            }
+          ],
+          "refId": "A",
+          "timeField": "metadata__timestamp"
+        }
+      ],
+      "timeFrom": "5y",
+      "timeShift": null,
+      "title": "Mailing Lists",
+      "transform": "table",
+      "type": "table"
+    }
+  ],
+  "refresh": false,
+  "schemaVersion": 18,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-5y",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "timezone": "",
+  "title": "Mailing Lists",
+  "uid": "3lphZL7Zz",
+  "version": 6
+}

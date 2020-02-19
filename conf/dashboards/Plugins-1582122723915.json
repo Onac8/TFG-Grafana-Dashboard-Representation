@@ -1,0 +1,2454 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "description": "Different Grafana plugins",
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": 3,
+  "links": [],
+  "panels": [
+    {
+      "activeThemeId": 0,
+      "gridPos": {
+        "h": 3,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 42,
+      "links": [],
+      "options": {},
+      "themes": [
+        {
+          "name": "Night Theme",
+          "styles": [
+            {
+              "props": {
+                "theme": "default"
+              },
+              "type": "basetheme"
+            },
+            {
+              "props": {
+                "url": "https://images.unsplash.com/photo-1524334228333-0f6db392f8a1"
+              },
+              "type": "bgimage"
+            },
+            {
+              "props": {
+                "text": ".panel-container {\n    background-color: rgba(0,0,0,0.3);\n}"
+              },
+              "type": "style"
+            }
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Boom Theme",
+      "transparent": true,
+      "type": "yesoreyeram-boomtheme-panel"
+    },
+    {
+      "content": "<h2>Clock</h2>\n\n",
+      "gridPos": {
+        "h": 2,
+        "w": 24,
+        "x": 0,
+        "y": 3
+      },
+      "id": 68,
+      "links": [],
+      "mode": "html",
+      "options": {},
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "metadata__timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "refId": "A",
+          "timeField": "metadata__timestamp"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "bgColor": null,
+      "clockType": "24 hour",
+      "countdownSettings": {
+        "customFormat": null,
+        "endCountdownTime": "2019-06-14T11:46:00.000Z",
+        "endText": "00:00:00"
+      },
+      "dateSettings": {
+        "dateFormat": "YYYY-MM-DD",
+        "fontSize": "20px",
+        "fontWeight": "normal",
+        "showDate": true
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 6,
+        "x": 0,
+        "y": 5
+      },
+      "id": 64,
+      "links": [],
+      "mode": "time",
+      "options": {},
+      "refreshSettings": {
+        "syncWithDashboard": false
+      },
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "metadata__timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "refId": "A",
+          "timeField": "metadata__timestamp"
+        }
+      ],
+      "timeFrom": null,
+      "timeSettings": {
+        "customFormat": "HH:mm:ss",
+        "fontSize": "60px",
+        "fontWeight": "normal"
+      },
+      "timeShift": null,
+      "timezone": "Europe/Madrid",
+      "timezoneSettings": {
+        "fontSize": "12px",
+        "fontWeight": "normal",
+        "showTimezone": true,
+        "zoneFormat": "nameOffset"
+      },
+      "title": "",
+      "type": "grafana-clock-panel"
+    },
+    {
+      "content": "<h2>Polistat Panel</h2>\n\n",
+      "gridPos": {
+        "h": 2,
+        "w": 24,
+        "x": 0,
+        "y": 10
+      },
+      "id": 66,
+      "links": [],
+      "mode": "html",
+      "options": {},
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "metadata__timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "refId": "A",
+          "timeField": "metadata__timestamp"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "cacheTimeout": null,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "git commits",
+      "gridPos": {
+        "h": 9,
+        "w": 13,
+        "x": 0,
+        "y": 12
+      },
+      "id": 62,
+      "links": [],
+      "options": {},
+      "polystat": {
+        "animationSpeed": 2500,
+        "columnAutoSize": false,
+        "columns": 5,
+        "defaultClickThrough": "",
+        "defaultClickThroughSanitize": false,
+        "displayLimit": 100,
+        "fontAutoScale": false,
+        "fontSize": 8,
+        "fontType": "Roboto",
+        "globalDecimals": 2,
+        "globalDisplayMode": "all",
+        "globalDisplayTextTriggeredEmpty": "OK",
+        "globalOperatorName": "total",
+        "globalUnitFormat": "short",
+        "gradientEnabled": true,
+        "hexagonSortByDirection": "desc",
+        "hexagonSortByField": "value",
+        "maxMetrics": 0,
+        "polygonBorderColor": "black",
+        "polygonBorderSize": 2,
+        "polygonGlobalFillColor": "#0a50a1",
+        "radius": "",
+        "radiusAutoSize": true,
+        "rowAutoSize": false,
+        "rows": 3,
+        "shape": "hexagon_pointed_top",
+        "tooltipDisplayMode": "all",
+        "tooltipDisplayTextTriggeredEmpty": "OK",
+        "tooltipFontSize": 12,
+        "tooltipFontType": "Roboto",
+        "tooltipPrimarySortDirection": "desc",
+        "tooltipPrimarySortField": "thresholdLevel",
+        "tooltipSecondarySortDirection": "desc",
+        "tooltipSecondarySortField": "value",
+        "tooltipTimestampEnabled": true
+      },
+      "savedComposites": [],
+      "savedOverrides": [
+        {
+          "clickThrough": "https://bitergia.com/",
+          "colors": [
+            "#299c46",
+            "#e5ac0e",
+            "#bf1b00",
+            "#ffffff"
+          ],
+          "decimals": null,
+          "enabled": true,
+          "label": "OVERRIDE 1",
+          "metricName": "Bitergia",
+          "operatorName": "total",
+          "prefix": "",
+          "sanitizeURLEnabled": true,
+          "scaledDecimals": null,
+          "suffix": "",
+          "thresholds": [
+            {
+              "color": "#1F60C4",
+              "state": 3,
+              "value": 15000
+            }
+          ],
+          "unitFormat": "short"
+        },
+        {
+          "clickThrough": "",
+          "colors": [
+            "#299c46",
+            "#e5ac0e",
+            "#bf1b00",
+            "#ffffff"
+          ],
+          "decimals": 2,
+          "enabled": true,
+          "label": "OVERRIDE 2",
+          "metricName": "GSoC",
+          "operatorName": "total",
+          "prefix": "",
+          "sanitizeURLEnabled": true,
+          "scaledDecimals": null,
+          "suffix": "",
+          "thresholds": [
+            {
+              "color": "#C4162A",
+              "state": 2,
+              "value": 3000000
+            }
+          ],
+          "unitFormat": "short"
+        },
+        {
+          "clickThrough": "",
+          "colors": [
+            "#299c46",
+            "#e5ac0e",
+            "#bf1b00",
+            "#ffffff"
+          ],
+          "decimals": 2,
+          "enabled": true,
+          "label": "OVERRIDE 3",
+          "metricName": "University of Missouri",
+          "operatorName": "total",
+          "prefix": "",
+          "sanitizeURLEnabled": true,
+          "scaledDecimals": null,
+          "suffix": "",
+          "thresholds": [
+            {
+              "color": "#8F3BB8",
+              "state": 2,
+              "value": 3000000
+            }
+          ],
+          "unitFormat": "short"
+        },
+        {
+          "clickThrough": "",
+          "colors": [
+            "#299c46",
+            "#e5ac0e",
+            "#bf1b00",
+            "#ffffff"
+          ],
+          "decimals": "",
+          "enabled": true,
+          "label": "OVERRIDE 4",
+          "metricName": "Unknown",
+          "operatorName": "total",
+          "prefix": "",
+          "sanitizeURLEnabled": true,
+          "scaledDecimals": null,
+          "suffix": "",
+          "thresholds": [
+            {
+              "color": "#37872D",
+              "state": 0,
+              "value": 0
+            }
+          ],
+          "unitFormat": "short"
+        },
+        {
+          "clickThrough": "",
+          "colors": [
+            "#299c46",
+            "#e5ac0e",
+            "#bf1b00",
+            "#ffffff"
+          ],
+          "decimals": "",
+          "enabled": true,
+          "label": "OVERRIDE 5",
+          "metricName": "University of Victoria",
+          "operatorName": "total",
+          "prefix": "",
+          "sanitizeURLEnabled": true,
+          "scaledDecimals": null,
+          "suffix": "",
+          "thresholds": [
+            {
+              "color": "#FA6400",
+              "state": 0,
+              "value": 0
+            }
+          ],
+          "unitFormat": "short"
+        },
+        {
+          "clickThrough": "",
+          "colors": [
+            "#299c46",
+            "#e5ac0e",
+            "#bf1b00",
+            "#ffffff"
+          ],
+          "decimals": "",
+          "enabled": true,
+          "label": "OVERRIDE 6",
+          "metricName": "University of Nebraska Omaha",
+          "operatorName": "total",
+          "prefix": "",
+          "sanitizeURLEnabled": true,
+          "scaledDecimals": null,
+          "suffix": "",
+          "thresholds": [
+            {
+              "color": "#F2495C",
+              "state": 0,
+              "value": 0
+            }
+          ],
+          "unitFormat": "short"
+        },
+        {
+          "clickThrough": "",
+          "colors": [
+            "#299c46",
+            "#e5ac0e",
+            "#bf1b00",
+            "#ffffff"
+          ],
+          "decimals": "",
+          "enabled": true,
+          "label": "OVERRIDE 7",
+          "metricName": "O2",
+          "operatorName": "avg",
+          "prefix": "",
+          "sanitizeURLEnabled": true,
+          "scaledDecimals": null,
+          "suffix": "",
+          "thresholds": [
+            {
+              "color": "#73BF69",
+              "state": 0,
+              "value": 0
+            }
+          ],
+          "unitFormat": "short"
+        },
+        {
+          "clickThrough": "",
+          "colors": [
+            "#299c46",
+            "#e5ac0e",
+            "#bf1b00",
+            "#ffffff"
+          ],
+          "decimals": "",
+          "enabled": true,
+          "label": "OVERRIDE 8",
+          "metricName": "University of Omaha",
+          "operatorName": "total",
+          "prefix": "",
+          "sanitizeURLEnabled": true,
+          "scaledDecimals": null,
+          "suffix": "",
+          "thresholds": [
+            {
+              "color": "#5794F2",
+              "state": 0,
+              "value": 0
+            }
+          ],
+          "unitFormat": "short"
+        },
+        {
+          "clickThrough": "",
+          "colors": [
+            "#299c46",
+            "#e5ac0e",
+            "#bf1b00",
+            "#ffffff"
+          ],
+          "decimals": "",
+          "enabled": true,
+          "label": "OVERRIDE 9",
+          "metricName": "EZserver",
+          "operatorName": "total",
+          "prefix": "",
+          "sanitizeURLEnabled": true,
+          "scaledDecimals": null,
+          "suffix": "",
+          "thresholds": [
+            {
+              "color": "#FF9830",
+              "state": 0,
+              "value": 0
+            }
+          ],
+          "unitFormat": "short"
+        },
+        {
+          "clickThrough": "",
+          "colors": [
+            "#299c46",
+            "#e5ac0e",
+            "#bf1b00",
+            "#ffffff"
+          ],
+          "decimals": "",
+          "enabled": true,
+          "label": "OVERRIDE 10",
+          "metricName": "Independent",
+          "operatorName": "avg",
+          "prefix": "",
+          "sanitizeURLEnabled": true,
+          "scaledDecimals": null,
+          "suffix": "",
+          "thresholds": [
+            {
+              "color": "#CA95E5",
+              "state": 0,
+              "value": 0
+            }
+          ],
+          "unitFormat": "short"
+        },
+        {
+          "clickThrough": "",
+          "colors": [
+            "#299c46",
+            "#e5ac0e",
+            "#bf1b00",
+            "#ffffff"
+          ],
+          "decimals": "",
+          "enabled": true,
+          "label": "OVERRIDE 11",
+          "metricName": "Trivago",
+          "operatorName": "total",
+          "prefix": "",
+          "sanitizeURLEnabled": true,
+          "scaledDecimals": null,
+          "suffix": "",
+          "thresholds": [
+            {
+              "color": "#FFA6B0",
+              "state": 0,
+              "value": 0
+            }
+          ],
+          "unitFormat": "short"
+        },
+        {
+          "clickThrough": "",
+          "colors": [
+            "#299c46",
+            "#e5ac0e",
+            "#bf1b00",
+            "#ffffff"
+          ],
+          "decimals": "",
+          "enabled": true,
+          "label": "OVERRIDE 12",
+          "metricName": "CloudBees",
+          "operatorName": "total",
+          "prefix": "",
+          "sanitizeURLEnabled": true,
+          "scaledDecimals": null,
+          "suffix": "",
+          "thresholds": [
+            {
+              "color": "#DEB6F2",
+              "state": 0,
+              "value": 0
+            }
+          ],
+          "unitFormat": "short"
+        },
+        {
+          "clickThrough": "",
+          "colors": [
+            "#299c46",
+            "#e5ac0e",
+            "#bf1b00",
+            "#ffffff"
+          ],
+          "decimals": "",
+          "enabled": true,
+          "label": "OVERRIDE 13",
+          "metricName": "Samsung",
+          "operatorName": "total",
+          "prefix": "",
+          "sanitizeURLEnabled": true,
+          "scaledDecimals": null,
+          "suffix": "",
+          "thresholds": [
+            {
+              "color": "#C0D8FF",
+              "state": 0,
+              "value": 0
+            }
+          ],
+          "unitFormat": "short"
+        },
+        {
+          "clickThrough": "",
+          "colors": [
+            "#299c46",
+            "#e5ac0e",
+            "#bf1b00",
+            "#ffffff"
+          ],
+          "decimals": "",
+          "enabled": true,
+          "label": "OVERRIDE 14",
+          "metricName": "Linux Foundation",
+          "operatorName": "total",
+          "prefix": "",
+          "sanitizeURLEnabled": true,
+          "scaledDecimals": null,
+          "suffix": "",
+          "thresholds": [
+            {
+              "color": "#C8F2C2",
+              "state": 0,
+              "value": 0
+            }
+          ],
+          "unitFormat": "short"
+        },
+        {
+          "clickThrough": "",
+          "colors": [
+            "#299c46",
+            "#e5ac0e",
+            "#bf1b00",
+            "#ffffff"
+          ],
+          "decimals": "",
+          "enabled": true,
+          "label": "OVERRIDE 15",
+          "metricName": "BBVA Data & Analytics",
+          "operatorName": "total",
+          "prefix": "",
+          "sanitizeURLEnabled": true,
+          "scaledDecimals": null,
+          "suffix": "",
+          "thresholds": [
+            {
+              "color": "#FFCB7D",
+              "state": 0,
+              "value": 0
+            }
+          ],
+          "unitFormat": "short"
+        }
+      ],
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "fake": true,
+              "field": "author_org_name",
+              "id": "3",
+              "settings": {
+                "min_doc_count": 1,
+                "order": "desc",
+                "orderBy": "_count",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "grimoire_creation_date",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "lines_changed",
+              "id": "1",
+              "meta": {},
+              "settings": {},
+              "type": "sum"
+            }
+          ],
+          "refId": "A",
+          "timeField": "grimoire_creation_date"
+        }
+      ],
+      "timeFrom": "5y",
+      "timeShift": null,
+      "title": "Lines changed per organization",
+      "type": "grafana-polystat-panel"
+    },
+    {
+      "content": "<h2>Radar Graph</h2>\n\n",
+      "gridPos": {
+        "h": 2,
+        "w": 24,
+        "x": 0,
+        "y": 21
+      },
+      "id": 53,
+      "links": [],
+      "mode": "html",
+      "options": {},
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "metadata__timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "refId": "A",
+          "timeField": "metadata__timestamp"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "bgColor": null,
+      "datasource": "git areas_of_code",
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 23
+      },
+      "hideTimeOverride": false,
+      "id": 56,
+      "links": [],
+      "options": {},
+      "radarSettings": {
+        "animationDurationMs": "1000",
+        "aspectRatio": 2.2,
+        "autoScale": true,
+        "drawTicksBackground": false,
+        "fontColor": "gray",
+        "fontSize": 14,
+        "gridColor": "gray",
+        "ignoreTimeInfluxDB": false,
+        "legendType": "bottom",
+        "limitAspectRatio": false,
+        "scaleMax": 0,
+        "scaleMin": 0,
+        "scaleStep": 0,
+        "seriesAlias": ""
+      },
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "fake": true,
+              "field": "file_ext",
+              "id": "8",
+              "settings": {
+                "min_doc_count": 1,
+                "order": "desc",
+                "orderBy": "_count",
+                "size": "5"
+              },
+              "type": "terms"
+            },
+            {
+              "fake": true,
+              "field": "project",
+              "id": "7",
+              "settings": {
+                "min_doc_count": 1,
+                "order": "desc",
+                "orderBy": "_count",
+                "size": "0"
+              },
+              "type": "terms"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "select metric",
+              "id": "1",
+              "meta": {},
+              "pipelineAgg": "select metric",
+              "pipelineVariables": [
+                {
+                  "name": "var1",
+                  "pipelineAgg": "select metric"
+                }
+              ],
+              "settings": {},
+              "type": "count"
+            }
+          ],
+          "refId": "A",
+          "timeField": "grimoire_creation_date"
+        }
+      ],
+      "timeFrom": "1y",
+      "timeShift": null,
+      "title": "File extension in each project",
+      "type": "snuids-radar-panel"
+    },
+    {
+      "content": "<h2>Status Map</h2>\n\n",
+      "gridPos": {
+        "h": 2,
+        "w": 24,
+        "x": 0,
+        "y": 32
+      },
+      "id": 59,
+      "links": [],
+      "mode": "html",
+      "options": {},
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "metadata__timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "refId": "A",
+          "timeField": "metadata__timestamp"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "cards": {
+        "cardHSpacing": 2,
+        "cardMinWidth": 5,
+        "cardRound": null,
+        "cardVSpacing": 2
+      },
+      "color": {
+        "cardColor": "#b4ff00",
+        "colorScale": "sqrt",
+        "colorScheme": "interpolateGnYlRd",
+        "defaultColor": "#757575",
+        "exponent": 0.5,
+        "mode": "spectrum",
+        "thresholds": []
+      },
+      "data": {
+        "decimals": null,
+        "unitFormat": "short"
+      },
+      "datasource": "git commits",
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 34
+      },
+      "highlightCards": true,
+      "id": 60,
+      "legend": {
+        "show": true
+      },
+      "links": [],
+      "nullPointMode": "as empty",
+      "options": {},
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "grimoire_creation_date",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "Author_uuid",
+              "id": "1",
+              "meta": {},
+              "settings": {},
+              "type": "cardinality"
+            }
+          ],
+          "refId": "A",
+          "timeField": "grimoire_creation_date"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Authors contribution",
+      "tooltip": {
+        "show": true
+      },
+      "type": "flant-statusmap-panel",
+      "useMax": true,
+      "xAxis": {
+        "labelFormat": "%a %m/%d",
+        "minBucketWidthToShowWeekends": 4,
+        "show": true,
+        "showCrosshair": true,
+        "showWeekends": true
+      },
+      "yAxis": {
+        "show": true,
+        "showCrosshair": false
+      },
+      "yAxisSort": "metrics"
+    },
+    {
+      "content": "<h2>Multistat</h2>\n\n",
+      "gridPos": {
+        "h": 2,
+        "w": 24,
+        "x": 0,
+        "y": 42
+      },
+      "id": 50,
+      "links": [],
+      "mode": "html",
+      "options": {},
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "metadata__timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "refId": "A",
+          "timeField": "metadata__timestamp"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "Aggregate": "last",
+      "BarPadding": 10,
+      "BaseLineColor": "#FA6400",
+      "BaseLineValue": 50000,
+      "DateFormat": "YYYY-MM-DD HH:mm:ss",
+      "DateTimeColName": "",
+      "EvenRowColor": "rgb(46, 45, 46)",
+      "FlashHighLimitBar": true,
+      "FlashLowLimitBar": true,
+      "GroupColName": "",
+      "GroupCols": 0,
+      "GroupGap": 5,
+      "GroupLabelColor": "#ffffff",
+      "GroupLabelFontSize": "200%",
+      "GroupNameFilter": "",
+      "GroupSortString": "",
+      "HighAxisColor": "rgb(255, 255, 255)",
+      "HighBarColor": "rgb(8, 128, 36)",
+      "HighLimitBarColor": "#ff0000",
+      "HighLimitBarFlashColor": "#ffa500",
+      "HighLimitBarFlashTimeout": 1000,
+      "HighLimitLineColor": "#ff0000",
+      "HighLimitValue": 1770000,
+      "HighSideMargin": 22,
+      "Horizontal": true,
+      "LabelColName": "author_org_name",
+      "LabelColor": "#ffffff",
+      "LabelFontSize": "100%",
+      "LabelMargin": null,
+      "LabelNameFilter": "",
+      "LableAngle": 0,
+      "LowAxisColor": "#ffffff",
+      "LowBarColor": "teal",
+      "LowLimitBarColor": "#1F60C4",
+      "LowLimitBarFlashColor": "#C0D8FF",
+      "LowLimitBarFlashTimeout": 200,
+      "LowLimitLineColor": "#ff0000",
+      "LowLimitValue": 4000,
+      "LowSideMargin": 22,
+      "MaxLineColor": "rgb(74, 232, 12)",
+      "MaxLineValue": null,
+      "MinLineValue": 0,
+      "OddRowColor": "rgba(33, 33, 34, 0.92)",
+      "OutOfRangeLabelColor": "#ffffff",
+      "RecolorHighLimitBar": true,
+      "RecolorLowLimitBar": true,
+      "ScaleFactor": 1,
+      "ShowBaseLine": true,
+      "ShowDate": false,
+      "ShowGroupLabels": true,
+      "ShowHighLimitLine": true,
+      "ShowLabels": true,
+      "ShowLeftAxis": true,
+      "ShowLowLimitLine": true,
+      "ShowMaxLine": false,
+      "ShowMinLine": true,
+      "ShowRightAxis": true,
+      "ShowTooltips": true,
+      "ShowValues": true,
+      "SortColName": "",
+      "SortDirection": "none",
+      "TZOffsetHours": 0,
+      "TooltipDateFormat": "YYYY-MM-DD HH:mm:ss",
+      "ValueColName": "Sum",
+      "ValueColor": "#ffffff",
+      "ValueDecimals": 0,
+      "ValueFontSize": "80%",
+      "ValuePosition": "top",
+      "datasource": "git commits",
+      "description": "Table-like panel with horizontal bars. Base limit in 50k linnes added. Blue (<50k) vs green (>50k). Lower limit 4k, high limit 1.77M.\n",
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 44
+      },
+      "id": 48,
+      "links": [],
+      "options": {},
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "fake": true,
+              "field": "author_org_name",
+              "id": "4",
+              "settings": {
+                "min_doc_count": 1,
+                "order": "desc",
+                "orderBy": "1",
+                "size": "10"
+              },
+              "type": "terms"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "lines_added",
+              "id": "1",
+              "meta": {},
+              "settings": {},
+              "type": "sum"
+            }
+          ],
+          "refId": "A",
+          "timeField": "grimoire_creation_date"
+        }
+      ],
+      "timeFrom": "5y",
+      "timeShift": null,
+      "title": "Linnes added per organization",
+      "type": "michaeldmoore-multistat-panel"
+    },
+    {
+      "content": "<h2>Diagram</h2>\n\n",
+      "gridPos": {
+        "h": 2,
+        "w": 24,
+        "x": 0,
+        "y": 52
+      },
+      "id": 46,
+      "links": [],
+      "mode": "html",
+      "options": {},
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "metadata__timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "refId": "A",
+          "timeField": "metadata__timestamp"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "colors": [
+        "rgba(50, 172, 45, 0.97)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(245, 54, 54, 0.9)"
+      ],
+      "composites": [],
+      "content": "graph LR\nA{SirMordred} -- Git/Github data --> B((ElasticS))\nA -- Git/Github data --> C((MariaDB))\nB --> D{Kibana}\nC --> D\nB --> E{Grafana}\nC -- Futura BD --> E",
+      "datasource": "git commits",
+      "decimals": 2,
+      "format": "none",
+      "graphId": "diagram_44",
+      "gridPos": {
+        "h": 7,
+        "w": 14,
+        "x": 0,
+        "y": 54
+      },
+      "hideTimeOverride": true,
+      "id": 44,
+      "init": {
+        "arrowMarkerAbsolute": true,
+        "cloneCssStyles": false,
+        "flowchart": {
+          "htmlLabels": true,
+          "useMaxWidth": true
+        },
+        "gantt": {
+          "barGap": 4,
+          "barHeight": 20,
+          "fontFamily": "\"Open-Sans\", \"sans-serif\"",
+          "fontSize": 11,
+          "gridLineStartPadding": 35,
+          "leftPadding": 75,
+          "numberSectionStyles": 3,
+          "titleTopMargin": 25,
+          "topPadding": 50
+        },
+        "logLevel": 3,
+        "sequenceDiagram": {
+          "actorMargin": 50,
+          "bottomMarginAdj": 1,
+          "boxMargin": 10,
+          "boxTextMargin": 5,
+          "diagramMarginX": 50,
+          "diagramMarginY": 10,
+          "height": 65,
+          "messageMargin": 35,
+          "mirrorActors": true,
+          "noteMargin": 10,
+          "useMaxWidth": true,
+          "width": 150
+        },
+        "startOnLoad": false
+      },
+      "legend": {
+        "avg": true,
+        "current": true,
+        "gradient": {
+          "enabled": true,
+          "show": true
+        },
+        "max": true,
+        "min": true,
+        "show": false,
+        "total": true
+      },
+      "links": [],
+      "mappingType": 1,
+      "maxDataPoints": 100,
+      "maxWidth": false,
+      "mermaidServiceUrl": "",
+      "metricCharacterReplacements": [],
+      "moddedSeriesVal": 0,
+      "mode": "content",
+      "nullPointMode": "connected",
+      "options": {},
+      "seriesOverrides": [],
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "grimoire_creation_date",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "author_uuid",
+              "id": "1",
+              "meta": {},
+              "settings": {},
+              "type": "cardinality"
+            }
+          ],
+          "refId": "A",
+          "timeField": "grimoire_creation_date"
+        }
+      ],
+      "thresholds": "0,10",
+      "timeFrom": "5y",
+      "timeShift": null,
+      "title": "TFG Diagram",
+      "type": "jdbranham-diagram-panel",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg",
+      "valueOptions": [
+        "avg",
+        "min",
+        "max",
+        "total",
+        "current"
+      ]
+    },
+    {
+      "content": "<h2>Blend stat (multiple query)</h2>\n\n",
+      "gridPos": {
+        "h": 2,
+        "w": 24,
+        "x": 0,
+        "y": 61
+      },
+      "id": 38,
+      "links": [],
+      "mode": "html",
+      "options": {},
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "metadata__timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "refId": "A",
+          "timeField": "metadata__timestamp"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "blendName": "total",
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorPostfix": false,
+      "colorPrefix": false,
+      "colorValue": true,
+      "colors": [
+        "#E0B400",
+        "#E0B400",
+        "#d44a3a"
+      ],
+      "datasource": "git commits",
+      "decimals": 3,
+      "format": "short",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 13,
+        "x": 0,
+        "y": 63
+      },
+      "id": 40,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "pluginVersion": "6.1.3",
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": true,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "grimoire_creation_date",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "lines_added",
+              "id": "1",
+              "meta": {},
+              "settings": {},
+              "type": "sum"
+            }
+          ],
+          "refId": "A",
+          "timeField": "grimoire_creation_date"
+        },
+        {
+          "bucketAggs": [
+            {
+              "field": "grimoire_creation_date",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "lines_changed",
+              "id": "1",
+              "meta": {},
+              "settings": {},
+              "type": "sum"
+            }
+          ],
+          "refId": "B",
+          "timeField": "grimoire_creation_date"
+        },
+        {
+          "bucketAggs": [
+            {
+              "field": "grimoire_creation_date",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "lines_removed",
+              "id": "1",
+              "meta": {},
+              "settings": {},
+              "type": "sum"
+            }
+          ],
+          "refId": "C",
+          "timeField": "grimoire_creation_date"
+        }
+      ],
+      "thresholds": "",
+      "timeFrom": "5y",
+      "timeShift": null,
+      "title": "Total lines added/changed/removed",
+      "type": "farski-blendstat-panel",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "total"
+    },
+    {
+      "content": "<h2>Pie Chart</h2>\n\n",
+      "gridPos": {
+        "h": 2,
+        "w": 24,
+        "x": 0,
+        "y": 67
+      },
+      "id": 26,
+      "links": [],
+      "mode": "html",
+      "options": {},
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "metadata__timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "refId": "A",
+          "timeField": "metadata__timestamp"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "aliasColors": {},
+      "breakPoint": "50%",
+      "cacheTimeout": null,
+      "combine": {
+        "label": "Others",
+        "threshold": 0
+      },
+      "datasource": "git areas_of_code",
+      "fontSize": "80%",
+      "format": "short",
+      "gridPos": {
+        "h": 9,
+        "w": 13,
+        "x": 0,
+        "y": 69
+      },
+      "hideTimeOverride": true,
+      "id": 24,
+      "interval": null,
+      "legend": {
+        "percentage": true,
+        "show": true,
+        "values": true
+      },
+      "legendType": "Right side",
+      "links": [],
+      "maxDataPoints": 3,
+      "nullPointMode": "connected",
+      "options": {},
+      "pieType": "pie",
+      "strokeWidth": 1,
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "fake": true,
+              "field": "file_ext",
+              "id": "3",
+              "settings": {
+                "min_doc_count": 1,
+                "order": "desc",
+                "orderBy": "_count",
+                "size": "15"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "grimoire_creation_date",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "file_ext",
+              "id": "1",
+              "meta": {},
+              "settings": {},
+              "type": "count"
+            }
+          ],
+          "refId": "A",
+          "timeField": "grimoire_creation_date"
+        }
+      ],
+      "timeFrom": "5y",
+      "timeShift": null,
+      "title": "File extensions",
+      "type": "grafana-piechart-panel",
+      "valueName": "total"
+    },
+    {
+      "content": "<h2>Carpet Plot</h2>\n\n",
+      "gridPos": {
+        "h": 2,
+        "w": 24,
+        "x": 0,
+        "y": 78
+      },
+      "id": 28,
+      "links": [],
+      "mode": "html",
+      "options": {},
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "metadata__timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "refId": "A",
+          "timeField": "metadata__timestamp"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "aggregate": "AVG",
+      "color": {
+        "colorScheme": "interpolateRdYlGn",
+        "colorSpace": "RGB",
+        "customColors": [
+          {
+            "color": "#006837"
+          },
+          {
+            "color": "#aa0526"
+          }
+        ],
+        "invert": false,
+        "mode": "SPECTRUM",
+        "nullColor": "transparent"
+      },
+      "data": {
+        "decimals": 1,
+        "unitFormat": "short"
+      },
+      "datasource": "git commits",
+      "fragment": "HOUR",
+      "gridPos": {
+        "h": 11,
+        "w": 24,
+        "x": 0,
+        "y": 80
+      },
+      "id": 22,
+      "legend": {
+        "show": true
+      },
+      "links": [],
+      "options": {},
+      "scale": {
+        "max": null,
+        "min": 0
+      },
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "grimoire_creation_date",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "refId": "A",
+          "timeField": "grimoire_creation_date"
+        }
+      ],
+      "timeFrom": "1M",
+      "timeShift": null,
+      "title": "Commits heatmap",
+      "tooltip": {
+        "show": true
+      },
+      "type": "petrslavotinek-carpetplot-panel",
+      "xAxis": {
+        "hideLabels": false,
+        "labelFormat": "%a %m/%d",
+        "minBucketWidthToShowWeekends": 4,
+        "show": true,
+        "showCrosshair": true,
+        "showWeekends": true
+      },
+      "yAxis": {
+        "hideLabels": false,
+        "show": true,
+        "showCrosshair": true
+      }
+    },
+    {
+      "content": "<h2>Annunciator</h2>\n\n",
+      "gridPos": {
+        "h": 2,
+        "w": 24,
+        "x": 0,
+        "y": 91
+      },
+      "id": 31,
+      "links": [],
+      "mode": "html",
+      "options": {},
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "metadata__timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "refId": "A",
+          "timeField": "metadata__timestamp"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "LowerLimit": {
+        "Color": "rgb(2, 17, 249)",
+        "Decimals": 1,
+        "DisplayOption": "static",
+        "FontSize": "50%",
+        "Value": "2500000"
+      },
+      "LowerWarning": {
+        "Color": "rgb(9, 115, 102)",
+        "DisplayOption": "static",
+        "Value": "3000000"
+      },
+      "Metric": {
+        "Color": "#37872D",
+        "Decimals": 3,
+        "FontSize": "100%",
+        "Format": "short",
+        "Name": "total"
+      },
+      "MetricValueRange": "3000000 -> 4000000",
+      "Postfix": {
+        "FontSize": "hide",
+        "Text": ""
+      },
+      "Prefix": {
+        "FontSize": "hide",
+        "Text": ""
+      },
+      "UpperLimit": {
+        "Color": "#C4162A",
+        "Decimals": 1,
+        "DisplayOption": "static",
+        "FontSize": "50%",
+        "Value": "5000000"
+      },
+      "UpperWarning": {
+        "Color": "#FA6400",
+        "DisplayOption": "static",
+        "Value": "4000000"
+      },
+      "datasource": "git commits",
+      "gridPos": {
+        "h": 5,
+        "w": 12,
+        "x": 0,
+        "y": 93
+      },
+      "id": 20,
+      "links": [],
+      "options": {},
+      "sparkline": {
+        "fillColor": "rgba(19, 193, 91, 0.32)",
+        "full": true,
+        "lineColor": "rgb(145, 200, 16)",
+        "show": true
+      },
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "grimoire_creation_date",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "lines_removed",
+              "id": "1",
+              "meta": {},
+              "settings": {},
+              "type": "sum"
+            }
+          ],
+          "refId": "A",
+          "timeField": "grimoire_creation_date"
+        }
+      ],
+      "timeFrom": "5y",
+      "timeShift": null,
+      "title": "Lines removed",
+      "type": "michaeldmoore-annunciator-panel"
+    },
+    {
+      "content": "<h2>Epict Panel</h2>\n\n",
+      "gridPos": {
+        "h": 2,
+        "w": 24,
+        "x": 0,
+        "y": 98
+      },
+      "id": 32,
+      "links": [],
+      "mode": "html",
+      "options": {},
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "metadata__timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "refId": "A",
+          "timeField": "metadata__timestamp"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "bgColor": null,
+      "bgURL": "https://i0.wp.com/blog.bitergia.com/wp-content/uploads/2019/02/bitergia-owl-big.png?fit=313%2C310&ssl=1",
+      "boxes": [
+        {
+          "color": "#0f0",
+          "colorHigh": "#f00",
+          "colorLow": "#0f0",
+          "colorMedium": "#fa1",
+          "decimal": "0",
+          "fontsize": 12,
+          "hasOrb": true,
+          "isBlinking": false,
+          "orbHideText": false,
+          "orbLocation": "Left",
+          "orbSize": "10",
+          "prefix": "A continuación la metric -->",
+          "prefixSize": 10,
+          "serie": "A-Series",
+          "suffix": "",
+          "suffixSize": 10,
+          "text": "N/A",
+          "thresholds": "20,60",
+          "usingThresholds": false,
+          "xpos": "10",
+          "ypos": "10"
+        }
+      ],
+      "datasource": "git commits",
+      "gridPos": {
+        "h": 9,
+        "w": 9,
+        "x": 0,
+        "y": 100
+      },
+      "hideTimeOverride": true,
+      "id": 16,
+      "links": [],
+      "options": {},
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "grimoire_creation_date",
+              "id": "2",
+              "settings": {
+                "interval": "1d",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "files",
+              "id": "1",
+              "meta": {},
+              "settings": {},
+              "type": "sum"
+            }
+          ],
+          "refId": "A",
+          "timeField": "grimoire_creation_date"
+        }
+      ],
+      "timeFrom": "5y",
+      "timeShift": null,
+      "title": "Background Image",
+      "type": "larona-epict-panel"
+    },
+    {
+      "content": "<h2>Bubble Chart</h2>\n\n",
+      "gridPos": {
+        "h": 2,
+        "w": 24,
+        "x": 0,
+        "y": 109
+      },
+      "id": 34,
+      "links": [],
+      "mode": "html",
+      "options": {},
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "metadata__timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "refId": "A",
+          "timeField": "metadata__timestamp"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "bgColor": null,
+      "colorScheme": "Unique",
+      "datasource": "git areas_of_code",
+      "decimal": 2,
+      "displayLabel": true,
+      "format": "short",
+      "gradientColors": [
+        "red",
+        "green"
+      ],
+      "gradientThresholds": "50,80",
+      "gridPos": {
+        "h": 10,
+        "w": 12,
+        "x": 0,
+        "y": 111
+      },
+      "groupDepthColors": [
+        "#F2495C",
+        "#C4162A"
+      ],
+      "groupSeperator": ",",
+      "height": 400,
+      "hideTimeOverride": true,
+      "id": 14,
+      "links": [],
+      "mode": "time",
+      "nullPointMode": "connected",
+      "options": {},
+      "svgBubbleId": "svg_14",
+      "svgContainer": {},
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "fake": true,
+              "field": "file_ext",
+              "id": "3",
+              "settings": {
+                "min_doc_count": 1,
+                "order": "desc",
+                "orderBy": "_count",
+                "size": "10"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "grimoire_creation_date",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "file_ext",
+              "id": "1",
+              "meta": {},
+              "settings": {},
+              "type": "count"
+            }
+          ],
+          "refId": "A",
+          "timeField": "grimoire_creation_date"
+        }
+      ],
+      "thresholdColors": [
+        "green",
+        "yellow",
+        "red"
+      ],
+      "thresholds": "50,80",
+      "timeFrom": "5y",
+      "timeShift": null,
+      "title": "File extensions",
+      "type": "digrich-bubblechart-panel",
+      "valueName": "total"
+    },
+    {
+      "content": "<h2>Datatable Panel</h2>\n\n",
+      "gridPos": {
+        "h": 2,
+        "w": 24,
+        "x": 0,
+        "y": 121
+      },
+      "id": 36,
+      "links": [],
+      "mode": "html",
+      "options": {},
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "metadata__timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "refId": "A",
+          "timeField": "metadata__timestamp"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "columns": [],
+      "compactRowsEnabled": true,
+      "datasource": "git commit_date",
+      "datatablePagingType": "simple_numbers",
+      "datatableTheme": "basic_theme",
+      "emptyData": false,
+      "fontSize": "100%",
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 123
+      },
+      "hoverEnabled": true,
+      "id": 12,
+      "infoEnabled": true,
+      "lengthChangeEnabled": true,
+      "links": [],
+      "options": {},
+      "orderColumnEnabled": true,
+      "pagingTypes": [
+        {
+          "text": "Page number buttons only",
+          "value": "numbers"
+        },
+        {
+          "text": "'Previous' and 'Next' buttons only",
+          "value": "simple"
+        },
+        {
+          "text": "'Previous' and 'Next' buttons, plus page numbers",
+          "value": "simple_numbers"
+        },
+        {
+          "text": "'First', 'Previous', 'Next' and 'Last' buttons",
+          "value": "full"
+        },
+        {
+          "text": "'First', 'Previous', 'Next' and 'Last' buttons, plus page numbers",
+          "value": "full_numbers"
+        },
+        {
+          "text": "'First' and 'Last' buttons, plus page numbers",
+          "value": "first_last_numbers"
+        }
+      ],
+      "panelHeight": null,
+      "rowNumbersEnabled": false,
+      "rowsPerPage": 5,
+      "scroll": false,
+      "scrollHeight": "default",
+      "searchEnabled": true,
+      "showCellBorders": false,
+      "showHeader": true,
+      "showRowBorders": true,
+      "sort": {
+        "col": 0,
+        "desc": true
+      },
+      "stripedRowsEnabled": true,
+      "styles": [
+        {
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "pattern": "Unique Count hash",
+          "thresholds": [],
+          "type": "string",
+          "unit": "short"
+        },
+        {
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "pattern": "Unique Count author_uuid",
+          "thresholds": [],
+          "type": "string",
+          "unit": "short"
+        },
+        {
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "pattern": "Unique Count author_org_name",
+          "thresholds": [],
+          "type": "string",
+          "unit": "short"
+        },
+        {
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "pattern": "Sum lines_added",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        },
+        {
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "pattern": "Sum lines_removed",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        },
+        {
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "pattern": "Average lines_changed",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        },
+        {
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "pattern": "Average files",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        }
+      ],
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "repo_name",
+              "id": "2",
+              "settings": {
+                "min_doc_count": 1,
+                "order": "desc",
+                "orderBy": "1",
+                "size": "0"
+              },
+              "type": "terms"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "hash",
+              "id": "1",
+              "meta": {},
+              "settings": {},
+              "type": "cardinality"
+            },
+            {
+              "field": "author_uuid",
+              "id": "3",
+              "meta": {},
+              "settings": {},
+              "type": "cardinality"
+            },
+            {
+              "field": "author_org_name",
+              "id": "4",
+              "meta": {},
+              "settings": {},
+              "type": "cardinality"
+            },
+            {
+              "field": "lines_added",
+              "id": "5",
+              "meta": {},
+              "settings": {},
+              "type": "sum"
+            },
+            {
+              "field": "lines_removed",
+              "id": "6",
+              "meta": {},
+              "settings": {},
+              "type": "sum"
+            },
+            {
+              "field": "lines_changed",
+              "id": "7",
+              "meta": {},
+              "settings": {},
+              "type": "avg"
+            },
+            {
+              "field": "files",
+              "id": "8",
+              "meta": {},
+              "settings": {},
+              "type": "avg"
+            }
+          ],
+          "refId": "A",
+          "timeField": "commit_date"
+        }
+      ],
+      "themeOptions": {
+        "dark": "./css/datatable-dark.css",
+        "light": "./css/datatable-light.css"
+      },
+      "themes": [
+        {
+          "disabled": false,
+          "text": "Basic",
+          "value": "basic_theme"
+        },
+        {
+          "disabled": true,
+          "text": "Bootstrap",
+          "value": "bootstrap_theme"
+        },
+        {
+          "disabled": true,
+          "text": "Foundation",
+          "value": "foundation_theme"
+        },
+        {
+          "disabled": true,
+          "text": "ThemeRoller",
+          "value": "themeroller_theme"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Top Repositories",
+      "transform": "table",
+      "type": "briangann-datatable-panel"
+    }
+  ],
+  "refresh": false,
+  "schemaVersion": 18,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-5y",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "timezone": "",
+  "title": "Plugins",
+  "uid": "ULASXiMWz",
+  "version": 50
+}

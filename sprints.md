@@ -179,7 +179,7 @@
   * RESUELTO -- No podemos poner intervalos de semanas, meses, años en los grafos. Máximo intervalos de refresco de 1d. --> (min time interval en "queries")
   * RESUELTO -- En grafos, se puede poner como eje x algo distinto a un eje de tiempos, poniendo "serie" en opciones de X axis, y group by grupo. --> RESUELTO
   * RESUELTO -- No se puede un "unique count of string field" (count of hash commits p.e.), siempre nos pide group by. En Kibana es un simple unique count.
-  * POR QUE EN GIT OVERWIEW, EN AUTHORS, VARIA TANTO SI PONEMOS git (metadata__timestamp) vs git commit (grimoire_creation_date).
+  * RESUELTO -- POR QUE EN GIT OVERWIEW, EN AUTHORS, VARIA TANTO SI PONEMOS git (metadata__timestamp) vs git commit (grimoire_creation_date).
 
 
 ## Extra
@@ -195,7 +195,7 @@
     -v $(pwd)/es-data:/var/lib/elasticsearch \
     -t grimoirelab/full
 
-  * Meterse en el cirio de CAULDRON. Posibilidad de integracion de Grafana con una aplicación en la web.
+  * Proyecto CAULDRON. Posibilidad de integracion de Grafana con una aplicación en la web.
 
   * DB guardada localmente:
    docker run -p 127.0.0.1:5601:5601 -p 127.0.0.1:9200:9200 -p 127.0.0.1:3306:3306 -p 127.0.0.1:3000:3000 -v $(pwd)/credentials.cfg:/override.cfg -v $(pwd)/es-data:/var/lib/elasticsearch -t grimoirelab/grafana

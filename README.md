@@ -1,6 +1,6 @@
 # Introduction
 
-This docker is dedicated to the representation of data through dashboards, thanks to a free software tool called [Grafana](https://grafana.com/). The obtained information allows us to analyze one or more specific projects in depth, focusing on different aspects, such as the study of statistics (mean, maximum / minimum, deviations ...), use of tables, listings or tops, or maybe a more visual or attractive representation, through the use of bar graphs, scattering, etc.
+This [docker](https://hub.docker.com/r/onac8/grafana-grimoirelab) is dedicated to the representation of data through dashboards, thanks to a free software tool called [Grafana](https://grafana.com/). The obtained information allows us to analyze one or more specific projects in depth, focusing on different aspects, such as the study of statistics (mean, maximum / minimum, deviations ...), use of tables, listings or tops, or maybe a more visual or attractive representation, through the use of bar graphs, scattering, etc.
 
 All data is extracted from multiple repositories of Git and GitHub, and from different mailing lists, thanks to the [GrimoireLab](https://chaoss.github.io/grimoirelab-tutorial/) opensource tool, precisely created for this purpose. The data is stored in Elasticsearch indexes, a tool that will allow us to access the different indexes created during the collection in Grafana.
 

@@ -36,3 +36,6 @@ The default project study in this docker is the CHAOSS Project (analyzing the re
 ## Docker image with local preinstalled Grafana
 
 We can use this docker even if we have already Grafana installed in our system. We can use different port when deploying the container, to avoid connection issues. Also, all changes we make in our Grafana will not be deleted when the container end its execution.
+
+## Demo and tutorials
+Youtube Playlist: https://www.youtube.com/playlist?list=PLCVLuotTGE7hU7RdRduHZcCPVar1wbXdD
